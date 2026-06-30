@@ -1,0 +1,55 @@
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+*.egg-info/
+
+# ===== Node =====
+node_modules/
+dist/
+.vite/
+*.local
+
+# ===== 数据 (生产数据, 自己备份即可) =====
+data/library.db
+data/library.db-*
+data/db.sqlite3
+data/db.sqlite3-*
+data/uploads/*
+
+# ===== IDE =====
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# ===== 环境 =====
+.env
+.env.local
+.env.*.local
+
+# ===== 临时调试/诊断页 (不要传) =====
+diagnose/
+outputs/
+.workbuddy/
+
+# ===== 杂项 =====
+*.log
+*.tmp
+*.bak
+*.orig
+*.rej
+*.spec
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+.mypy_cache/
+.ruff_cache/
