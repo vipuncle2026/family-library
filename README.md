@@ -54,10 +54,10 @@ cp .env.example .env
 docker compose up -d --build
 
 # 4. 打开浏览器
-# http://localhost:8080
+# http://localhost:8180
 ```
 
-**默认管理员**：`shuguan` / `123456`  
+**默认管理员**：`admin` / `admin123`  
 **⚠️ 部署成功后请立即改密码！** （登录后 → 家庭成员 → 编辑）
 
 ### 升级
@@ -120,7 +120,7 @@ family-library/
 
 | 变量 | 含义 | 默认 |
 |---|---|---|
-| `PORT` | 前端容器对外暴露的主机端口 | `8080` |
+| `PORT` | 前端容器对外暴露的主机端口 | `8180` |
 | `DATABASE_URL` | SQLite 连接串 | `./data/library.db` |
 | `SECRET_KEY` | JWT 签名密钥（**生产必改**） | 占位 |
 | `UPLOAD_DIR` | 用户上传封面目录 | `./data/uploads` |

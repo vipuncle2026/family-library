@@ -3,9 +3,9 @@
 #   1. 把整个 family-library 目录上传到 NAS (例如 /vol1/1000/docker/family-library)
 #   2. cd /vol1/1000/docker/family-library
 #   3. docker compose up -d --build
-#   4. 浏览器打开 http://<NAS-IP>:8080
+#   4. 浏览器打开 http://<NAS-IP>:8180
 #
-# 首次启动会自动 seed 演示数据 (管理员: shuguan / 123456)
+# 首次启动会自动 seed 演示数据 (管理员: admin / admin123)
 
 services:
   # ===== 后端 FastAPI + SQLite =====

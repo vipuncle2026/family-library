@@ -15,15 +15,15 @@ cd /vol1/1000/docker/family-library
 docker compose up -d --build
 
 # 4. 浏览器打开
-#    http://<NAS-IP>:8080
+#    http://<NAS-IP>:8180
 ```
 
 首次启动会花 2-3 分钟构建（npm install + pip install + 前端 build），之后秒起。
 
 ## 管理员登录
 
-- 账号: `shuguan`
-- 密码: `123456`
+- 账号: `admin`
+- 密码: `admin123`
 
 **⚠️ 部署成功后立刻改密码！** （登录后右上角 → 家庭成员 → 编辑）
 
@@ -70,7 +70,7 @@ ports:
 
 ## 常见问题
 
-**Q: 启动后访问 8080 空白？**  
+**Q: 启动后访问 8180 空白？**  
 A: 等 1 分钟让前端 build 完成，看 `docker compose logs -f frontend`。
 
 **Q: 上传封面失败？**  
