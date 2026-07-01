@@ -40,6 +40,25 @@
 
 ### 部署
 
+**方式一：拉 GHCR 镜像（推荐，不需要源码）**
+
+```bash
+# 1. 在 NAS 上创建目录
+mkdir -p /vol1/1000/docker/family-library/data/uploads
+
+# 2. 下载 compose 文件
+cd /vol1/1000/docker/family-library
+curl -O https://raw.githubusercontent.com/vipuncle2026/family-library/main/docker-compose.ghcr.yml
+
+# 3. 一键启动
+docker compose -f docker-compose.ghcr.yml up -d
+
+# 4. 打开浏览器
+# http://<NAS-IP>:8180
+```
+
+**方式二：从源码构建（适合开发）**
+
 ```bash
 # 1. 克隆
 git clone https://github.com/vipuncle2026/family-library.git
@@ -47,8 +66,6 @@ cd family-library
 
 # 2. 复制环境变量 (可选, 用默认也能跑)
 cp .env.example .env
-# 然后改 SECRET_KEY: 
-# python -c "import secrets; print(secrets.token_urlsafe(64))"
 
 # 3. 一键启动
 docker compose up -d --build
@@ -63,7 +80,11 @@ docker compose up -d --build
 ### 升级
 
 ```bash
-cd family-library
+# 方式一 (GHCR 镜像):
+docker compose -f docker-compose.ghcr.yml pull
+docker compose -f docker-compose.ghcr.yml up -d
+
+# 方式二 (源码构建):
 git pull
 docker compose up -d --build
 ```
