@@ -48,6 +48,6 @@
 提交代码时考虑：
 - SQLite 默认配置能跑（不要硬编码 PostgreSQL）
 - 默认 5MB 上传限制不要随意改大
-- 不要把任何 API key 写进代码（豆瓣走 HTML 爬虫）
+- 不要把任何 API key 写进代码（豆B走 HTML 爬虫）
 
 欢迎任何 PR！小到 typo 也行 😎

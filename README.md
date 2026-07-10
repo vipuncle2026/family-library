@@ -1,6 +1,6 @@
 # 家庭图书馆 (Family Library)
 
-> 一家人都能用的私人藏书管理系统。一键 Docker 部署，自动从豆瓣拉评分和封面。
+> 一家人都能用的私人藏书管理系统。一键 Docker 部署，自动从豆B拉评分和封面。
 
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Vue 3](https://img.shields.io/badge/frontend-Vue%203-42b883)
@@ -9,8 +9,8 @@
 
 ## ✨ 特性
 
-- 📖 **扫码/ISBN 录入**：输入 ISBN 自动从豆瓣拉取评分、封面、简介
-- 🌟 **豆瓣同步**：HTML 爬虫（不依赖任何 API key），评分、标签、封面一键同步
+- 📖 **扫码/ISBN 录入**：输入 ISBN 自动从豆B拉取评分、封面、简介
+- 🌟 **豆B同步**：HTML 爬虫（不依赖任何 API key），评分、标签、封面一键同步
 - 📚 **分类 + 位置管理**：多维度分类 + 实物存放位置追踪
 - 👨‍👩‍👧 **家庭共享**：多用户独立账号，独立记录阅读进度与借阅
 - 📊 **阅读统计**：时长、习惯、分类分布可视化
@@ -28,7 +28,7 @@
 | 前端 | Vue 3 + Vite + Pinia + Vue Router + Axios |
 | 后端 | FastAPI + SQLAlchemy (async) + Pydantic v2 |
 | 数据库 | SQLite (aiosqlite) |
-| 数据源 | 豆瓣图书（HTML 爬虫，无需 key） |
+| 数据源 | 豆B图书（HTML 爬虫，无需 key） |
 | 部署 | Docker + Docker Compose + Nginx |
 | 鉴权 | JWT (python-jose) + bcrypt |
 
@@ -109,7 +109,7 @@ family-library/
 │   │   ├── core/            # 配置 / 数据库 / 安全
 │   │   ├── models/          # SQLAlchemy ORM
 │   │   ├── schemas/         # Pydantic schema
-│   │   ├── services/        # 豆瓣爬虫 + 缓存
+│   │   ├── services/        # 豆B爬虫 + 缓存
 │   │   └── main.py
 │   ├── scripts/seed.py      # 演示数据初始化
 │   ├── requirements.txt
@@ -146,16 +146,16 @@ family-library/
 | `SECRET_KEY` | JWT 签名密钥（**生产必改**） | 占位 |
 | `UPLOAD_DIR` | 用户上传封面目录 | `./data/uploads` |
 | `MAX_UPLOAD_SIZE` | 单文件上限 (字节) | `5242880` (5MB) |
-| `META_TIMEOUT_SECONDS` | 豆瓣抓取超时 | `10` |
+| `META_TIMEOUT_SECONDS` | 豆B抓取超时 | `10` |
 | `CORS_ORIGINS` | 允许的跨域源 | `["*"]` |
 
-## 🔍 豆瓣数据源说明
+## 🔍 豆B数据源说明
 
-豆瓣官方 API 自 2019 年起不再开放新 key。本项目**不依赖任何第三方 API key**，直接用 `httpx` 爬 `book.douban.com` 的公开页面提取评分、封面、标签。
+豆B官方 API 自 2019 年起不再开放新 key。本项目**不依赖任何第三方 API key**，直接用 `httpx` 爬 `book.douban.com` 的公开页面提取评分、封面、标签。
 
 **稳定性策略**：
 - 本地 `meta_cache` 表按 ISBN 缓存 7 天（命中 < 50ms）
-- 失败也写负缓存（避免反复打豆瓣被限流）
+- 失败也写负缓存（避免反复打豆B被限流）
 - 抓不到时引导用户手动录入
 
 ## 💾 备份与恢复
